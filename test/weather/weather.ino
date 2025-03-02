@@ -26,6 +26,11 @@ String weatherURL = "http://api.openweathermap.org/data/2.5/weather?q=" + String
 
 #define timeInterval 60000
 long int timeNow = 0;
+float temperature;
+int humidity;
+String weather;
+
+void fetchWeatherData(void);
 
 // MARK: setup
 void setup() {
@@ -41,6 +46,8 @@ void setup() {
 
   fetchWeatherData();
   timeNow = millis();
+    String input = Serial.readString();  // Reads and clears the input from serial
+    
 }
 
 void loop() {
